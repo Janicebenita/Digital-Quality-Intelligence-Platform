@@ -11,3 +11,9 @@ The intended input is an operator's investigation request, a selected quality do
 ## Limits and known constraints
 
 A central limitation is that an output depends on the quality of the uploaded measurements, selected schema, valid specifications, and appropriateness of the statistical assumptions. The illustrative domain profiles require independent validation of their rules, limits, references, and recommendations before production use. The agent must not treat a risk label or statistical association as proof of causation, assert regulatory compliance, authorize product release, or provide clinical diagnosis. Its proposed actions require review by a qualified professional against approved procedures and source records.
+
+## Implementation in This Repository
+
+`app.py` implements the upload and interactive review workflow, while `analytics.py` contains the repository's deterministic quality calculations and rule evaluation. The bundled sample data and configuration files make the demonstrated construction-quality workflow reproducible from a local run.
+
+The application returns measurements, triggered rules, and supporting summaries for reviewer inspection. It has no product-release, regulatory-approval, or corrective-action endpoint, so a qualified human must authorize every operational decision.
