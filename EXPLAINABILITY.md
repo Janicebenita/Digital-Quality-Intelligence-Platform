@@ -14,6 +14,14 @@ A central limitation is that an output depends on the quality of the uploaded me
 
 ## Implementation in This Repository
 
-`app.py` implements the upload and interactive review workflow, while `analytics.py` contains the repository's deterministic quality calculations and rule evaluation. The bundled sample data and configuration files make the demonstrated construction-quality workflow reproducible from a local run.
+`app.py` implements the Streamlit upload and reviewer workflow, while `analytics.py` contains the deterministic analysis. The latter maps and validates columns with `map_columns` and `validate_columns`, normalizes cube-log and SQC worksheets, prepares the data, evaluates `aci_compliance`, computes `six_sigma_metrics`, classifies risk, detects abnormalities, and builds the export report.
 
-The application returns measurements, triggered rules, and supporting summaries for reviewer inspection. It has no product-release, regulatory-approval, or corrective-action endpoint, so a qualified human must authorize every operational decision.
+The application exposes the cleaned measurements, compliance flags, capability metrics, risk classification, abnormality records, and interpretation summary used in the report. Sample datasets and profiles make the construction-quality demonstration reproducible. No product-release, regulatory-approval, or corrective-action endpoint exists, so a qualified human must authorize every operational decision.
+
+## Outputs and supporting evidence
+
+Outputs include normalized measurement tables, specification comparisons, process metrics, triggered rules, abnormalities, risk explanations, and exportable reports. Each conclusion is linked to the uploaded values, selected limits, and named deterministic function rather than an unsupported model assertion.
+
+## Uncertainty and human review
+
+Schema choices, missing values, specification limits, and statistical assumptions can change the result. A qualified domain reviewer must verify the source data and approved procedures before using any recommendation.
